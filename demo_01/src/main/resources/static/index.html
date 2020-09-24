@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript">
+        // alert("我是弹窗")
+
+        // var a=new Object()
+        // a.name="woshitm";
+        // console.info(a);
+
+        // console.info(1==1)
+        // console.info("1" == 2);
+
+        // var time=30;
+        // if (time<20)
+        // {
+        //     x="Good day";
+        // }
+        // else
+        // {
+        //     x="Good evening";
+        // }
+        // alert(x)
+        // console.info(x)
+
+        // var a=new Array();
+        // a[0]=1;
+        // a[1]=2;
+        // a[2]=3;
+        // a[3]=4;
+        // for (x in a){
+        //
+        //     console.info(x)
+        //     document.write(x + "<br>");
+        // }
+
+        // function text(num) {
+        //     console.info("adfa")
+        // }
+        // text()
+        function jisuan() {
+            var a = document.getElementById("value1")
+            var b = document.getElementById("value2")
+            var c = parseInt(a.value) + parseInt(b.value);
+            alert(c)
+        }
+    </script>
+    <!--    <script type="text/javascript " src="waibu.js"></script>-->
+</head>
+<body>
+<input type="text" id="value1">&nbsp;
++
+<input type="text" id="value2">
+=
+<input type="button" value="计算结果" onclick="jisuan()">
+</body>
+</html>

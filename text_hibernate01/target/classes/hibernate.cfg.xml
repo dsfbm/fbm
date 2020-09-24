@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/springboot?serverTimezone=UTC</property>
+
+        <!-- DB schema will be updated if needed -->
+        <!--     <property name="hibernate.hbm2ddl.auto">update</property> -->
+        <!--    <property name="dialect">org.hibernate.dialect.MySQLDialect</property>-->
+
+        <!-- Echo all executed SQL to stdout -->
+
+
+        <property name="show_sql">true</property>
+
+        <!-- validate | update | create | create-drop -->
+
+
+        <!-- create：如果有表（有mapping配置的映射关系），则先删除表，再新建create 初始化表，清空数据 update：当表结构发生变化时，
+        不会删除原有字段，只会新增字段，避免数据误删当没有表的时候，update会自动帮我们创建一张表 （类似create，但不同于create，不会删除原来的表） -->
+
+        <!--     <property name="hbm2ddl.auto">create</property>-->
+
+
+        <!-- 映射关系 -->
+
+
+        <mapping class="entity.TUserEntity"/>
+        <mapping resource="entity/TUserEntity.hbm.xml"/>
+
+    </session-factory>
+</hibernate-configuration>

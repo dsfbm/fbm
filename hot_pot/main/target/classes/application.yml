@@ -1,0 +1,45 @@
+server:
+  port: 80
+  servlet:
+    context-path: /mybatis-plus
+logging:
+  level:
+    root: info
+    com.example.hot: trace
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/store?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 12255899
+    type: com.zaxxer.hikari.HikariDataSource
+  profiles:
+    active: @spring.active@
+
+    hikari:
+      maximum-pool-size: 8
+      minimum-idle: 4
+      idle-timeout: 30000
+      connection-timeout: 30000
+      max-lifetime: 45000
+      auto-commit: true
+      pool-name: HikariCP
+mybatis-plus:
+  mapper-locations: classpath:com/example/hot/mapper/**/*.xml
+  typeAliasesPackage: com.*.*.entity
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+      table-prrefix: hot_
+
+mail:
+  pass: vabrmtmmnjfqbigj
+  from: nm_bzbob@foxmail.com
+  port: 465
+  nickname: 管理员
+  host: smtp.qq.com
+  receivers:
+    - 632834571@qq.com
+  flag: true

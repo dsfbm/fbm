@@ -1,0 +1,25 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+
+spring:
+  mvc:
+    static-path-pattern:/static/**
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot?serverTimezone=UTC
+    username: root
+    password: 123456
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+
+
+

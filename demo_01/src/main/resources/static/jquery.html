@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="assets/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+        function text1() {
+            var a = document.getElementById("username")
+            alert(a.value)
+        }
+
+        function text02() {
+            var a = $("#username")
+            alert(a.val())
+        }
+
+
+        function text03() {
+            var a = document.getElementById("username")
+            var b = $(a);
+            alert(b.val())
+        }
+
+        function text04() {
+            var $a = $("#username")
+            var b = $a[0];
+            var c = $a.get(0);
+            alert(b.value)
+            alert(c.value)
+        }
+    </script>
+</head>
+<br>
+
+用户名： <input type="text" id="username"></br>
+<input type="button" onclick="text1()" value="点击事件1">
+<input type="button" onclick="text02()" value="点击事件2">
+<input type="button" onclick="text03()" value="点击事件3">
+<input type="button" onclick="text04()" value="点击事件4">
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.springboot_zsgc.user.dao.UserDao">
+    <select id="getAll" resultType="com.example.springboot_zsgc.user.Entity.UserEntity" parameterType="java.util.Map">
+
+        select * from student
+    </select>
+
+    <delete id="delById" parameterType="java.lang.Integer">
+
+        delete from student where id = ${id}
+
+    </delete>
+    <insert id="save" parameterType="com.example.springboot_zsgc.user.Entity.UserEntity">
+
+        INSERT INTO `springboot`.`student` (
+        `id`,
+        `username`,
+        `password`,
+        `createtime`,
+        `stauts`
+        )
+        VALUES
+        (
+        NULL,
+        #{username},
+        #{password},
+        #{createtime},
+        #{stauts}
+        );
+
+
+    </insert>
+
+</mapper>

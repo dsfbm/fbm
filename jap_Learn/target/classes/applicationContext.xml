@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://ww.springframework.org/schema/context"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:task="http://ww.springframework.org/schema/task"
+       xsi:schemaLocation="
+             http://www.springframework.org/schema/beans http://ww.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+            http://www.springframework.org/schema/context http://ww.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+            http://www.springframework.org/schema/data/jpa
+            http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+            http://ww.springframework.org/schema/context ">
+    <!--spring和spring data jpa的配置-->
+
+    <!--1.创建entitylanagerFactory对象交给spring容器管理-->
+    <bean id="entityManagerFactoty" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <!--配置的扫描的包（实体类所在的包）-->
+        <property name="packagesToScan" value="com.jpa_learn.domain"/>
+        <!--jpa的实现厂家-->
+        <property name="persistenceProvider">
+            <bean class="org.hibernate.jpa.HibernatePersistenceProvider"/>
+        </property>
+        <!--jpa的供应商适配器-->
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <!--配置是否自动创建数据库表-->
+                <property name="generateDdl" value="false"/>
+                <!--指定效据库类型-->
+                <property name="database" value="MYSQL"/>
+                <property name="databasePlatform" value="org.hibernate.dialect.MysQLDialect"/>
+                <property name="showSql" value="true"/>
+            </bean>
+        </property>
+    </bean>
+
+
+</beans>

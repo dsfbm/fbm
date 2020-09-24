@@ -1,0 +1,29 @@
+server:
+  port: 80
+  servlet:
+    context-path: /baseinfo
+logging:
+  level:
+    root: info
+    com.example.baseinfo: trace
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 12255899
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 8
+      minimum-idle: 4
+      idle-timeout: 30000
+      connection-timeout: 30000
+      max-lifetime: 45000
+      auto-commit: true
+      pool-name: FreeServerPlatformHikariCP
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  typeAliasesPackage: com.*.*.entity
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID

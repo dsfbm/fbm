@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.hot.mapper.AperaterMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.hot.entity.Aperater">
+    <result column="id" property="id" />
+    <result column="flag" property="flag" />
+    <result column="create_time" property="createTime" />
+    <result column="update_time" property="updateTime" />
+        <result column="account" property="account" />
+        <result column="password" property="password" />
+        <result column="salt" property="salt" />
+        <result column="rea_name" property="reaName" />
+        <result column="store_name" property="storeName" />
+        <result column="email" property="email" />
+        <result column="store_address" property="storeAddress" />
+        <result column="store_pic" property="storePic" />
+        <result column="login_time" property="loginTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        flag,
+        create_time,
+        update_time,
+        account, password, salt, rea_name, store_name, email, store_address, store_pic, login_time
+    </sql>
+
+</mapper>

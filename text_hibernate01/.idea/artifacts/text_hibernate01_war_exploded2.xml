@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="text_hibernate01:war exploded2">
+    <output-path>$PROJECT_DIR$/out/artifacts/text_hibernate01_war_exploded2</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="text_hibernate01/web/Web" />
+    </root>
+  </artifact>
+</component>

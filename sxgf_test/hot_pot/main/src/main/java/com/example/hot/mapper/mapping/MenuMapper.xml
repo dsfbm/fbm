@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.hot.mapper.MenuMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.hot.entity.Menu">
+    <result column="id" property="id" />
+    <result column="flag" property="flag" />
+    <result column="create_time" property="createTime" />
+    <result column="update_time" property="updateTime" />
+        <result column="store_id" property="storeId" />
+        <result column="food_name" property="foodName" />
+        <result column="food_type" property="foodType" />
+        <result column="food_price" property="foodPrice" />
+        <result column="food_total" property="foodTotal" />
+        <result column="food_count" property="foodCount" />
+        <result column="food_pic" property="foodPic" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        flag,
+        create_time,
+        update_time,
+        store_id, food_name, food_type, food_price, food_total, food_count, food_pic
+    </sql>
+
+</mapper>

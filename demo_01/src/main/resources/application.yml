@@ -1,0 +1,21 @@
+#默认的端口是8080
+
+#server.port=9090
+
+#改成随机端口，为什么要改成随机端口，可以避免端口冲突
+#server.port=${random.int[1024,9999]}
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.238.137:3306/Liunx1
+    username: root
+    password: 12255899
+  jpa:
+    hibernate:
+      ddl-auto: update #ddl-auto:设为create表示每次都重新建表
+    show-sql: true
+
+
+
